@@ -1,0 +1,194 @@
+.gallery {
+  padding: 80px 0 140px;
+  background: var(--bg-black);
+}
+
+.gallery__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.gallery__eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-50);
+  padding: 6px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.gallery__title {
+  font-size: clamp(44px, 4.8vw, 64px);
+  letter-spacing: -0.03em;
+  max-width: 920px;
+  color: var(--text-100);
+}
+
+.gallery__title .serif-italic {
+  background: linear-gradient(100deg, #ffd6a8 0%, var(--accent-cyan) 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gallery__cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Tile */
+.tile {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  isolation: isolate;
+  cursor: pointer;
+  transition: transform 0.5s var(--ease-out), border-color 0.4s var(--ease-out);
+}
+
+.tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-mid);
+}
+
+.tile__art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.tile__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  transition: transform 0.8s var(--ease-out);
+}
+
+.tile__orb--a {
+  width: 60%;
+  height: 80%;
+  left: -10%;
+  top: -10%;
+  opacity: 0.85;
+}
+
+.tile__orb--b {
+  width: 50%;
+  height: 70%;
+  right: -10%;
+  bottom: -15%;
+  opacity: 0.75;
+}
+
+.tile:hover .tile__orb--a {
+  transform: translate(20px, 10px) scale(1.1);
+}
+
+.tile:hover .tile__orb--b {
+  transform: translate(-20px, -10px) scale(1.15);
+}
+
+.tile__shine {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 80% 40% at 50% 110%,
+      rgba(255, 255, 255, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* Tile color variants */
+.tile--aurora { background: #0c0428; }
+.tile--aurora .tile__orb--a { background: var(--accent-violet); }
+.tile--aurora .tile__orb--b { background: var(--accent-cyan); }
+
+.tile--sunset { background: #2a0e1f; }
+.tile--sunset .tile__orb--a { background: #ff5f6d; }
+.tile--sunset .tile__orb--b { background: #ffc371; }
+
+.tile--reef { background: #04141f; }
+.tile--reef .tile__orb--a { background: #00f0ff; }
+.tile--reef .tile__orb--b { background: #4ee2c2; }
+
+.tile--noir { background: #060611; }
+.tile--noir .tile__orb--a { background: #5328ff; }
+.tile--noir .tile__orb--b { background: #c3b3ff; opacity: 0.4; }
+
+.tile--mint { background: #07221f; }
+.tile--mint .tile__orb--a { background: #4ee2c2; }
+.tile--mint .tile__orb--b { background: #ffd97a; opacity: 0.6; }
+
+.tile--peach { background: #2a0d18; }
+.tile--peach .tile__orb--a { background: #ff8b6b; }
+.tile--peach .tile__orb--b { background: #ffd6a8; }
+
+/* Meta + hover overlay */
+.tile__meta {
+  position: absolute;
+  left: 22px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tile__tag {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.tile__name {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-100);
+  letter-spacing: -0.01em;
+}
+
+.tile__hover {
+  position: absolute;
+  right: 18px;
+  bottom: 20px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-100);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.tile:hover .tile__hover {
+  opacity: 1;
+  transform: translateY(0);
+}
