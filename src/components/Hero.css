@@ -69,6 +69,19 @@
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
 }
 
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.hero__canvas canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 @keyframes hero-float {
   0%, 100% {
     transform: translate(0, 0) scale(1);
