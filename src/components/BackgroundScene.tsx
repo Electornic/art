@@ -181,7 +181,7 @@ function SphereChoreographer({ sphere }: { sphere: SphereDef }) {
         ref={matRef}
         color={initial.color}
         emissive={initial.color}
-        emissiveIntensity={0.45}
+        emissiveIntensity={0.35}
         distort={initial.distort}
         speed={1.4}
         roughness={sphere.roughness}
