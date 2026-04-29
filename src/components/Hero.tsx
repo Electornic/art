@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-import HeroScene from './HeroScene'
 import './Hero.css'
 
 function Hero() {
@@ -10,12 +8,6 @@ function Hero() {
         <div className="hero__glow hero__glow--cyan" />
         <div className="hero__glow hero__glow--peach" />
         <div className="hero__grid" />
-      </div>
-
-      <div className="hero__canvas" aria-hidden="true">
-        <Suspense fallback={null}>
-          <HeroScene />
-        </Suspense>
       </div>
 
       <div className="hero__inner">

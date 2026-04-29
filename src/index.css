@@ -152,6 +152,27 @@ svg {
   padding: 0 var(--container-pad);
 }
 
+/* Global 3D background layer.
+   Stays pinned to the viewport so spheres are visible across every
+   section. Pointer events disabled so the canvas never blocks UI. */
+.bg-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-scene canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.app__main {
+  position: relative;
+  z-index: 1;
+}
+
 /* Scroll-driven reveal animations.
    No-op fallback for browsers without animation-timeline support
    (content stays visible). */

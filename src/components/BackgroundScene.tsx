@@ -36,7 +36,7 @@ function FloatingSphere({
   )
 }
 
-function HeroScene() {
+function BackgroundScene() {
   return (
     <Canvas
       camera={{ position: [0, 0, 8], fov: 45 }}
@@ -109,4 +109,4 @@ function HeroScene() {
   )
 }
 
-export default HeroScene
+export default BackgroundScene
