@@ -4,6 +4,7 @@ import LoadingSequence from './components/LoadingSequence'
 import Awards from './components/Awards'
 import GalleryCTA from './components/GalleryCTA'
 import UseCases from './components/UseCases'
+import ExpertServices from './components/ExpertServices'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Awards />
         <GalleryCTA />
         <UseCases />
+        <ExpertServices />
       </main>
     </div>
   )
