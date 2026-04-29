@@ -1,7 +1,5 @@
-import { useRef } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { Environment, MeshDistortMaterial, Float } from '@react-three/drei'
-import type { Mesh } from 'three'
+import { Canvas } from '@react-three/fiber'
+import { MeshDistortMaterial, Float } from '@react-three/drei'
 
 type SphereProps = {
   position: [number, number, number]
@@ -22,19 +20,10 @@ function FloatingSphere({
   roughness = 0.15,
   metalness = 0.6,
 }: SphereProps) {
-  const ref = useRef<Mesh>(null)
-
-  useFrame((state) => {
-    if (!ref.current) return
-    const t = state.clock.elapsedTime
-    ref.current.rotation.x = Math.sin(t * 0.2 * speed) * 0.4
-    ref.current.rotation.y = t * 0.1 * speed
-  })
-
   return (
-    <Float speed={speed} rotationIntensity={0.4} floatIntensity={1.2}>
-      <mesh ref={ref} position={position} scale={scale}>
-        <sphereGeometry args={[1, 96, 96]} />
+    <Float speed={speed} rotationIntensity={0.6} floatIntensity={1.2}>
+      <mesh position={position} scale={scale}>
+        <sphereGeometry args={[1, 64, 64]} />
         <MeshDistortMaterial
           color={color}
           distort={distort}
@@ -52,7 +41,25 @@ function HeroScene() {
     <Canvas
       camera={{ position: [0, 0, 8], fov: 45 }}
       dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: true }}
+      gl={{
+        antialias: true,
+        alpha: true,
+        powerPreference: 'high-performance',
+        failIfMajorPerformanceCaveat: false,
+      }}
+      onCreated={({ gl }) => {
+        // Suppress benign "Context Lost" warning that fires when React
+        // (esp. StrictMode in dev) remounts the canvas. Letting the
+        // browser's default handler run logs a noisy error; preventing
+        // default lets WebGL restore cleanly when the canvas remounts.
+        gl.domElement.addEventListener(
+          'webglcontextlost',
+          (event) => {
+            event.preventDefault()
+          },
+          false,
+        )
+      }}
     >
       <ambientLight intensity={0.35} />
       <directionalLight position={[4, 6, 5]} intensity={1.1} color="#ffffff" />
@@ -98,8 +105,6 @@ function HeroScene() {
         speed={1.5}
         distort={0.25}
       />
-
-      <Environment preset="night" />
     </Canvas>
   )
 }
