@@ -5,6 +5,7 @@ import Awards from './components/Awards'
 import GalleryCTA from './components/GalleryCTA'
 import UseCases from './components/UseCases'
 import ExpertServices from './components/ExpertServices'
+import Steps from './components/Steps'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <GalleryCTA />
         <UseCases />
         <ExpertServices />
+        <Steps />
       </main>
     </div>
   )
