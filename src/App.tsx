@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import LoadingSequence from './components/LoadingSequence'
 import Awards from './components/Awards'
 import GalleryCTA from './components/GalleryCTA'
+import UseCases from './components/UseCases'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <LoadingSequence />
         <Awards />
         <GalleryCTA />
+        <UseCases />
       </main>
     </div>
   )
