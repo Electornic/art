@@ -55,6 +55,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -66,6 +70,23 @@ body {
   background: var(--bg-black);
   color: var(--text-100);
   overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-black);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  border: 2px solid var(--bg-black);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 h1,
@@ -129,4 +150,51 @@ svg {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-pad);
+}
+
+/* Scroll-driven reveal animations.
+   No-op fallback for browsers without animation-timeline support
+   (content stays visible). */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .awards__head,
+    .awards__grid > .award,
+    .gallery__head,
+    .gallery__grid > .tile,
+    .usecases__head,
+    .usecases__grid > .usecase,
+    .experts__head,
+    .experts__panel,
+    .steps__head,
+    .steps__grid > .step,
+    .footer__cta-inner,
+    .loading__caption {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
