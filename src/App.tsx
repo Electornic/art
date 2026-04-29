@@ -1,10 +1,13 @@
 import Nav from './components/Nav'
+import Hero from './components/Hero'
 
 function App() {
   return (
     <div className="app">
       <Nav />
-      <main style={{ minHeight: '100vh' }} />
+      <main>
+        <Hero />
+      </main>
     </div>
   )
 }
