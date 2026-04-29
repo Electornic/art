@@ -1,6 +1,6 @@
 .usecases {
   padding: 80px 0 140px;
-  background: var(--bg-black);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .usecases__head {

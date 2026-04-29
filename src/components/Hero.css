@@ -17,7 +17,7 @@
   z-index: -1;
   background:
     radial-gradient(ellipse 80% 60% at 50% 100%, var(--bg-purple) 0%, transparent 70%),
-    var(--bg-black);
+    rgba(0, 0, 0, 0.4);
 }
 
 .hero__glow {

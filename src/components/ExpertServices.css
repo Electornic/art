@@ -1,6 +1,6 @@
 .experts {
   padding: 60px 0 140px;
-  background: var(--bg-black);
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .experts__head {

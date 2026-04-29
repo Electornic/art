@@ -1,6 +1,6 @@
 .awards {
   padding: 120px 0 140px;
-  background: var(--bg-black);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .awards__head {
