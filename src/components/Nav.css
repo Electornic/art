@@ -1,0 +1,144 @@
+.nav {
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nav__inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: calc(100% - 48px);
+  max-width: 1320px;
+  padding: 10px 14px 10px 24px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+/* Logo */
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--text-100);
+}
+
+.nav__logo-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, #ffd6a8, #ff8b6b 50%, #5328ff 110%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 0 14px rgba(255, 139, 107, 0.45);
+}
+
+.nav__logo-text {
+  white-space: nowrap;
+}
+
+/* Center menu */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
+}
+
+.nav__menu-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-80);
+  border-radius: var(--radius-pill);
+  transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+}
+
+.nav__menu-item:hover {
+  color: var(--text-100);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav__chevron {
+  opacity: 0.65;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.nav__menu-item:hover .nav__chevron {
+  transform: translateY(1px);
+  opacity: 1;
+}
+
+/* Right actions */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav__login {
+  font-size: 14px;
+  color: var(--text-80);
+  padding: 0 10px;
+  transition: color 0.2s var(--ease-out);
+}
+
+.nav__login:hover {
+  color: var(--text-100);
+}
+
+/* Buttons (shared, but local to nav for now) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  transition:
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn--ghost {
+  color: var(--text-100);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-soft);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--border-mid);
+}
+
+.btn--primary {
+  color: var(--bg-black);
+  background: var(--text-100);
+  border: 1px solid var(--text-100);
+}
+
+.btn--primary:hover {
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
