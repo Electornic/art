@@ -1,0 +1,122 @@
+.loading {
+  position: relative;
+  padding: 120px 0 80px;
+  background: var(--bg-black);
+  overflow: hidden;
+  text-align: center;
+}
+
+.loading__track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  animation: loading-marquee 40s linear infinite;
+}
+
+@keyframes loading-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.loading__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-80);
+  border: 1px solid var(--border-soft);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.loading__chip:nth-child(6n + 1) .loading__dot {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 12px var(--accent-cyan);
+}
+.loading__chip:nth-child(6n + 2) .loading__dot {
+  background: #ff8b6b;
+  box-shadow: 0 0 12px #ff8b6b;
+}
+.loading__chip:nth-child(6n + 3) .loading__dot {
+  background: var(--accent-violet);
+  box-shadow: 0 0 12px var(--accent-violet);
+}
+.loading__chip:nth-child(6n + 4) .loading__dot {
+  background: #ffd97a;
+  box-shadow: 0 0 12px #ffd97a;
+}
+.loading__chip:nth-child(6n + 5) .loading__dot {
+  background: var(--accent-lavender);
+  box-shadow: 0 0 12px var(--accent-lavender);
+}
+.loading__chip:nth-child(6n + 6) .loading__dot {
+  background: #4ee2c2;
+  box-shadow: 0 0 12px #4ee2c2;
+}
+
+.loading__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: loading-pulse 1.6s var(--ease-out) infinite;
+}
+
+@keyframes loading-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+.loading__ellipsis {
+  color: var(--text-50);
+  letter-spacing: 0.05em;
+}
+
+/* Edge fades */
+.loading__edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.loading__edge--left {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-black) 30%, transparent);
+}
+
+.loading__edge--right {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg-black) 30%, transparent);
+}
+
+.loading__caption {
+  margin-top: 56px;
+  font-size: 18px;
+  color: var(--text-70);
+  letter-spacing: -0.005em;
+}
+
+.loading__caption .serif-italic {
+  color: var(--accent-lavender);
+  font-size: 1.1em;
+}

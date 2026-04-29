@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import LoadingSequence from './components/LoadingSequence'
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Nav />
       <main>
         <Hero />
+        <LoadingSequence />
       </main>
     </div>
   )
