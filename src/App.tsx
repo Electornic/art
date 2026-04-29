@@ -6,6 +6,7 @@ import GalleryCTA from './components/GalleryCTA'
 import UseCases from './components/UseCases'
 import ExpertServices from './components/ExpertServices'
 import Steps from './components/Steps'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <ExpertServices />
         <Steps />
       </main>
+      <Footer />
     </div>
   )
 }

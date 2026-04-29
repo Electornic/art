@@ -1,0 +1,221 @@
+.footer {
+  position: relative;
+  background: var(--bg-black);
+  border-top: 1px solid var(--border-soft);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Final CTA banner */
+.footer__cta {
+  position: relative;
+  padding: 140px 0 120px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+
+.footer__cta-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -180px;
+  transform: translateX(-50%);
+  width: 880px;
+  height: 480px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--accent-violet) 0%, transparent 60%);
+  filter: blur(80px);
+  opacity: 0.55;
+  z-index: -1;
+}
+
+.footer__cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+
+.footer__cta-title {
+  font-size: clamp(56px, 6.4vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-100);
+  max-width: 920px;
+}
+
+.footer__magic {
+  font-size: 1.2em;
+  background: linear-gradient(
+    100deg,
+    #ffd6a8 0%,
+    #ff8b6b 35%,
+    var(--accent-violet) 70%,
+    var(--accent-cyan) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0 0.06em;
+}
+
+.footer__cta-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Main sitemap */
+.footer__main {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: 48px;
+  padding: 96px 80px 80px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-100);
+  letter-spacing: -0.01em;
+}
+
+.footer__logo-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd6a8, #ff8b6b 50%, #5328ff 110%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 14px rgba(255, 139, 107, 0.45);
+}
+
+.footer__tagline {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-70);
+  max-width: 280px;
+}
+
+.footer__tagline .serif-italic {
+  color: var(--accent-lavender);
+}
+
+.footer__socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.footer__social {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-70);
+  transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out);
+}
+
+.footer__social:hover {
+  color: var(--text-100);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-mid);
+}
+
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.footer__column-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-50);
+  margin-bottom: 18px;
+}
+
+.footer__column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__column a {
+  font-size: 14px;
+  color: var(--text-80);
+  transition: color 0.2s var(--ease-out);
+}
+
+.footer__column a:hover {
+  color: var(--text-100);
+}
+
+/* Bottom bar */
+.footer__bottom {
+  border-top: 1px solid var(--border-soft);
+  padding: 22px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-50);
+}
+
+.footer__legal {
+  display: flex;
+  gap: 22px;
+}
+
+.footer__legal a {
+  color: var(--text-50);
+  transition: color 0.2s var(--ease-out);
+}
+
+.footer__legal a:hover {
+  color: var(--text-100);
+}
+
+/* Giant wordmark */
+.footer__giant {
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  transform: translateX(-50%);
+  font-size: clamp(180px, 24vw, 320px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+}
