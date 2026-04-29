@@ -166,6 +166,9 @@ function SphereChoreographer({ sphere }: { sphere: SphereDef }) {
 
     if (mat) {
       mat.color.lerp(colorA, damp)
+      // Mirror the lerped color into the emissive channel so each sphere
+      // self-glows in its own hue instead of depending on scene lights.
+      mat.emissive.lerp(colorA, damp)
       mat.distort = MathUtils.lerp(mat.distort, targetDistort, damp)
     }
   })
@@ -177,6 +180,8 @@ function SphereChoreographer({ sphere }: { sphere: SphereDef }) {
       <MeshDistortMaterial
         ref={matRef}
         color={initial.color}
+        emissive={initial.color}
+        emissiveIntensity={0.45}
         distort={initial.distort}
         speed={1.4}
         roughness={sphere.roughness}
